@@ -3,8 +3,6 @@ import 'package:grupolenotre/tabs/filial_tab.dart';
 import 'package:grupolenotre/tabs/home_tab.dart';
 import 'package:grupolenotre/widgets/custom_drawer.dart';
 
-
-
 class HomeScreen extends StatelessWidget {
 
   final _pageController = PageController();

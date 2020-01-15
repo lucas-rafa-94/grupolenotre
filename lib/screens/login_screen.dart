@@ -130,13 +130,14 @@ class _LoginPageState extends State<LoginScreen> {
         content: Text("Sucesso"),
         backgroundColor: Colors.black,
         duration: Duration(seconds: 3)));
-    print("Sucesso");
+        Route route = MaterialPageRoute(builder: (context) => HomeScreen());
+        Navigator.push(context, route);
   }
 
   void _onFailure() {
     _scaffoldKey.currentState.showSnackBar(
         SnackBar(
-            content: Text("Falha"),
+            content: Text("Erro"),
             backgroundColor: Colors.black,
             duration: Duration(seconds: 3)
         )
