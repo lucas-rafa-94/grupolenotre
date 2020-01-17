@@ -15,22 +15,13 @@ class LoginApi {
   Future<Map> _makePostRequest(String email, String password) async {
     String url = 'https://api.grupolenotre.com/login';
     Map<String, String> headers = {"Content-type": "application/json"};
-    /*Map<String, String> headers = {
-      HttpHeaders.contentTypeHeader: "application/json", // or whatever
-      HttpHeaders.authorizationHeader: "Basic $token",
-    };*/
     String dados =
         '{"email": "${email}", "senha": "${password}"}';
 
     http.Response response = await http.post(url,
-        headers: headers, body: dados); // check the status code for the result
+        headers: headers, body: dados);
     int statusCode = response
-        .statusCode; // this API passes back the id of the new item added to the body
-
-    if (statusCode == 200)
-    {
-
-    }
+        .statusCode;
 
     token = json.decode(response.body)['usuario']['token'];
     print(token);
